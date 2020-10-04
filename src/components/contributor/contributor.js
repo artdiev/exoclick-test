@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Card, Avatar, Skeleton, Col,
-} from 'antd';
+import { Avatar, Card, Col, Skeleton } from 'antd';
 import { AiFillGithub, RiGitRepositoryCommitsLine } from 'react-icons/all';
 
 const { Meta } = Card;
@@ -10,8 +8,15 @@ const ContributorCard = ({ user, loading }) => (
   <Col flex="1 0 250px">
     <Card
       actions={[
-        <a href={user.html_url}><AiFillGithub key="link" /> Link</a>,
-        <div><RiGitRepositoryCommitsLine key="commits" />{user.contributions}</div>,
+        <a href={user.html_url}>
+          <AiFillGithub key="link" />
+          {' '}
+          Link
+        </a>,
+        <div>
+          <RiGitRepositoryCommitsLine key="commits" />
+          {user.contributions}
+        </div>,
       ]}
     >
       <Skeleton loading={loading} avatar active>

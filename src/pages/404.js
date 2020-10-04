@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Result, Button } from 'antd';
+import { Result } from 'antd';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 

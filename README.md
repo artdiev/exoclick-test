@@ -5,6 +5,21 @@
 
 ## 🚀 Welcome to a Gatsby site
 
+### Features
+- Caching
+- Load more
+- Notifications and status updates
+- Fast
+- Apollo
+
+### Bugs and issues
+- No props validation or tests are provided -easy fix
+- Logic and presentation are mixed up together a little -easy fix
+- Due to caching load more breaks when going back to already visited repositories. Needs to be
+ fixed by using Apollo in-memory store instead of useState hook for pages.
+- GH Graphql does not have a query to get contributors. Rest is used instead.
+
+
 1.  **Start developing.**
 
     Navigate into site’s directory and start it up.

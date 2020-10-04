@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Button, Form, Input, Space,
-} from 'antd';
+import { Button, Form, Input, Space } from 'antd';
 import { RiAccountPinCircleLine, RiGitRepositoryLine } from 'react-icons/all';
 
 // TODO test production build of sign in (window object)
@@ -23,7 +21,9 @@ const wrapperCol = {
   },
 };
 
-const SearchForm = ({ searchForm, Search, loading, Reset }) => (
+const SearchForm = ({
+  searchForm, Search, loading, Reset,
+}) => (
   <Form
     form={searchForm}
     size="large"

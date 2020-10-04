@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Row, Col, Typography, Card, notification, Button, Form,
-} from 'antd';
-import { gql, useLazyQuery } from '@apollo/client';
+import { Button, Col, Form, notification, Row, Typography } from 'antd';
+import { useLazyQuery } from '@apollo/client';
 import { AiFillGithub } from 'react-icons/all';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -14,7 +12,7 @@ const { Title } = Typography;
 
 const IndexPage = () => {
   const [searchForm] = Form.useForm();
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
 
   const [getContributors, response] = useLazyQuery(
     QUERY_REPOSITORY_COLLABORATORS, {
@@ -25,7 +23,7 @@ const IndexPage = () => {
 
   const LoadMore = () => {
     response.fetchMore({
-      variables: { page: page + 2 },
+      variables: { page: page + 1 },
       updateQuery: (prev, { fetchMoreResult }) => {
         if (!fetchMoreResult) return prev;
         if (fetchMoreResult.repositoryContributors?.length === 30) {
@@ -44,7 +42,6 @@ const IndexPage = () => {
   };
 
   const Notify = (data) => {
-    console.log(data);
     if (!data?.repositoryContributors?.length > 0) {
       notification.warning({
         message: 'Repository not found',
@@ -57,14 +54,13 @@ const IndexPage = () => {
   };
 
   const Search = (name, owner) => {
-    setPage(0);
-    getContributors({ variables: { owner, name, page: 1 } });
+    setPage(1);
+    getContributors({ variables: { owner, name, page } });
   };
 
   const Reset = () => {
     searchForm.resetFields();
-    setPage(0);
-    console.log('reset');
+    setPage(1);
   };
 
   if (response.error) {
@@ -99,7 +95,6 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      {console.log(response)}
       <Row gutter={[32, 32]} justify="center" style={{ height: '80vh' }} align="middle">
         <Col flex="0 1 600px">
           <Title style={{ textAlign: 'right' }}>

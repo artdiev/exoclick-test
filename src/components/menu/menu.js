@@ -12,7 +12,7 @@ const Menu = ({ siteTitle }) => (
           <img
             style={{ maxWidth: '150px' }}
             src={Logo}
-            alt={ siteTitle }
+            alt={siteTitle}
           />
         </Link>
       </Col>
