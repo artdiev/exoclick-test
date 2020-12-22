@@ -16,6 +16,7 @@ link:
 - Notifications and status updates
 - Fast
 - Apollo
+- 1-1.5 hours
 
 ### Bugs and issues
 - No props validation or tests are provided -easy fix
