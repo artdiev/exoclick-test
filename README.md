@@ -5,11 +5,6 @@ Github Contributors List
 
 ## 🚀 Welcome to a Gatsby site
 
-# 💫 Demo
-Deployed using AWS Amplify
-link:
-[check it out](https://master.d17oxksszanbf2.amplifyapp.com/)
-
 ### Features
 - Caching
 - Load more
